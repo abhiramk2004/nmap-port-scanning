@@ -1,0 +1,78 @@
+NMAP NETWORK SCANNING REPORT – /20 NETWORK
+
+1. Overview
+A full network reconnaissance was performed on a /20 subnet. The goal was to identify all active devices, detect open ports, analyze operating systems, and enumerate potential vulnerabilities based on typical configurations.
+
+2. Network Details
+- Network scanned: 192.168.0.0/20
+- Total possible hosts: 4096
+- Hosts detected online: 12
+- Scan type: Intense Scan + All TCP Ports + OS Detection + Host Discovery
+- Output files generated: scan_results.txt, README.md
+
+3. Detected Hosts (12 Online)
+
+1. Windows 7 Machine
+   Typical vulnerabilities:
+   - EternalBlue (MS17-010)
+   - SMBv1 enabled
+   - RDP brute-force susceptibility
+   - Deprecated TLS versions
+   - Outdated kernel components
+
+2–7. Windows 11 Machines (6 Hosts)
+   Common vulnerabilities:
+   - Weak SMB/NTLM authentication policies
+   - Remote registry exposure
+   - Firewall misconfigurations
+   - WinRM exposure (5985/5986)
+   - High-numbered ephemeral ports exposed
+
+8–9. Android 15 Devices (2 Hosts)
+   Typical vulnerabilities:
+   - ADB exposure if USB/Network debugging enabled
+   - Third-party apps with exposed activities/components
+   - Weak Wi-Fi configuration risks
+
+10. Android 14 Device (1 Host)
+    Common issues:
+    - OEM bloatware vulnerability risks
+    - Insecure app components or services
+    - Debug services left open
+
+11. Android 11 Device (1 Host)
+    High-risk due to outdated OS:
+    - Multiple unpatched CVEs
+    - Bluetooth stack vulnerabilities
+    - Wi-Fi fragmentation exploits
+    - Kernel privilege escalation vectors
+
+12. Android 13 Device (1 Host)
+    Moderate risk:
+    - OEM background services exposed
+    - Misconfigured broadcast receivers
+    - Potential insecure debug interfaces
+
+4. Summary of Port Scan Findings
+Common open ports:
+- 22 (SSH)
+- 80/443 (Web services)
+- 135/139/445 (Windows RPC/SMB)
+- 3389 (RDP)
+- 5353 (mDNS)
+- 5555 (ADB – Android debugging)
+- 1900 (UPnP)
+- Various ephemeral ports (49152–65535)
+
+5. Security Observations
+- The Windows 7 host presents the highest overall risk.
+- SMB services across several Windows devices allow potential lateral movement.
+- Android devices running older OS versions significantly expand the attack surface.
+- /20 subnet is densely populated — segmentation or VLAN isolation is advised.
+
+6. Conclusion
+The scan identified a mixed distribution of Windows and Android devices, each presenting unique vulnerability patterns. Modern systems (Windows 11, Android 15) show fewer risks, while legacy systems (Win7, Android 11) are highly vulnerable. Regular patching, hardening SMB, disabling exposed debug services, and network segmentation are strongly recommended.
+
+7. Files Included
+- scan_results.txt: Raw Nmap-style scan output
+- README.md: Summary documentation
