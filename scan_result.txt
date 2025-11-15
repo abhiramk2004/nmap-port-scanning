@@ -1,0 +1,43 @@
+Nmap Scan Output (Simulated)
+
+Scanning 192.168.0.0/20...
+4096 hosts scanned.
+12 hosts online.
+
+192.168.0.10 - Windows 7
+Ports: 135/tcp, 139/tcp, 445/tcp, 3389/tcp
+
+192.168.0.22 - Windows 11
+Ports: 445/tcp, 5985/tcp, 5357/tcp
+
+192.168.0.23 - Windows 11
+Ports: 135/tcp, 445/tcp
+
+192.168.0.24 - Windows 11
+Ports: 135/tcp, 139/tcp, 445/tcp, 3389/tcp
+
+192.168.0.25 - Windows 11
+Ports: 135/tcp, 445/tcp, 5040/tcp
+
+192.168.0.30 - Windows 11
+Ports: 80/tcp, 443/tcp
+
+192.168.0.31 - Windows 11
+Ports: 135/tcp, 445/tcp, 902/tcp
+
+192.168.0.40 - Android 15
+Ports: 5555/tcp (ADB), 80/tcp
+
+192.168.0.41 - Android 15
+Ports: 5555/tcp, 8080/tcp
+
+192.168.0.55 - Android 14
+Ports: 5555/tcp
+
+192.168.0.60 - Android 11
+Ports: 5353/udp (mDNS), 1900/udp (UPnP)
+
+192.168.0.77 - Android 13
+Ports: 5555/tcp, 8000/tcp
+
+Scan completed in 85.43 seconds.
